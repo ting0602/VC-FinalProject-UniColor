@@ -1,15 +1,16 @@
-## Code release progress:
+## Code Reference
 
-<strong>Todo:</strong>
-- <strong>Instructions for training code</strong>
-- <strong>Dataset preparation</strong>
-- <strong>Interactive interface</strong>
+**This project is based on the code from [Original Repository](https://github.com/luckyhzt/unicolor).**
 
-Done:
-- Basic training code
-- Environment
-- Pretrained model checkpoint
-- Sampling code
+## Assignment Overview
+### NYCU 2023 Video Compression - Final Project
+The goal of our final project is to compress images, such as satellite aerial photos, where color information is less critical. 
+
+We first convert the images to black and white before proceeding with image compression to significantly reduce file size. Finally, we apply a coloring process. Despite the fact that the colors may not match those of the original image, this approach satisfies the requirements since color does not provide crucial information in such images.
+
+*This code corresponds to the coloring phase of the project.*
+
+*The primary code for this project can be found in the ```sample/sample.ipynb```*
 
 # *UniColor:* A Unified Framework for Multi-Modal Colorization with Transformer
 
@@ -22,10 +23,10 @@ Zhitong Huang $^{1*}$, [Nanxuan Zhao](http://nxzhao.com/) $^{2*}$, [Jing Liao](h
 <font size="1"> $^1$: City University of Hong Kong, Hong Kong SAR, China &nbsp;&nbsp; $^2$: University of Bath, Bath, United Kingdom </font> \
 <font size="1"> $^*$: Both authors contributed equally to this research &nbsp;&nbsp; $^\dagger$: Corresponding author </font>
 
-## Abstract:
+## Abstract
 We propose the first unified framework <em>UniColor</em> to support colorization in multiple modalities, including both unconditional and conditional ones, such as stroke, exemplar, text, and even a mix of them. Rather than learning a separate model for each type of condition, we introduce a two-stage colorization framework for incorporating various conditions into a single model. In the first stage, multi-modal conditions are converted into a common representation of hint points. Particularly, we propose a novel CLIP-based method to convert the text to hint points. In the second stage, we propose a Transformer-based network composed of <em>Chroma-VQGAN</em> and <em>Hybrid-Transformer</em> to generate diverse and high-quality colorization results conditioned on hint points. Both qualitative and quantitative comparisons demonstrate that our method outperforms state-of-the-art methods in every control modality and further enables multi-modal colorization that was not feasible before. Moreover, we design an interactive interface showing the effectiveness of our unified framework in practical usage, including automatic colorization, hybrid-control colorization, local recolorization, and iterative color editing.
 
-### Two-stage Method:
+### Two-stage Method
 Our framework consists of two stages. In the first stage, all different conditions (stroke, exemplar, and text) are converted to a common form of hint points. In the second stage, diverse results are generated automatically either from scratch or based on the condition of hint points.
 ![alt text](figures/unified.png)
 
